@@ -1,5 +1,5 @@
 ﻿/******************************************
-/Welcome to the JF-17 Standalone DTC!
+-----Welcome to the JF-17 Standalone DTC!-----
 This program will enable you to configure the DCS JF-17 by Deka outside of DCS.
 You will be able to configure radio presets, countermeasures, control settings, and more!
 *******************************************/
@@ -22,10 +22,8 @@ The user can either exit the porogram or continue to do another edit.
 /******************************************
 TODO:
 -have people try it out
--try it on multiple machines
 -make video
 -post on ed UserFiles
--Consider making this into a multi-aircraft thing
 *******************************************/
 
 /******************************************
@@ -33,13 +31,15 @@ Lessons Learned:
 -Making the ~200 comms fields x3 (freq, label, and notes field) could have been smoother
 -Think early in dev on how you should have the program save. It is possible to merge the different types.
 -Think early in dev on how you want to handle the error/"user dont do that" conditions. They cany be merged.
-
 *******************************************/
 
 /******************************************
 Improvements:
+-properly format the code to standards so that it looks nice
 -prevent the yellow box on the help page from moving with the text
 -Create a custom Windows border
+-Integrate woth other aircraft DTC (kiowa?)
+-implement a check to make sure the jf 17 is in the options lua. (code has been started)
 *******************************************/
 
 /******************************************
@@ -51,16 +51,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using LsonLib;
 using Microsoft.Win32;
 using Xceed.Wpf.Toolkit;
@@ -124,22 +118,7 @@ namespace JF17StandaloneDTC
 
             label_status.Text = System.DateTime.Now + " : " + "Welcome!!!";
             label_status.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0da04c"));
-
-            /****************************
-        TODO: Make the LOAD function that is used when the user launches the program. 
-        //all it does is load the two file path variables and then loads the current game configurations
-        private void CheckForSaveFile()
-        {
-           if (File.Exists(settingsFile))//if the safe file exists, load it
-            {
-                var savedSettings = LsonVars.Parse(File.ReadAllText(settingsFile));//put the contents of the settings file into a lua read
-
-                selected_selectDcsExe_string = savedSettings[appName]["userFileLocation"].GetString();
-
-                if (selected_selectDcsExe_string.Length > 2)//i just chose two just because
-                {
-        ********************/
-            ////TODO: this if block needs to get relocated to the init phase
+            
             if (File.Exists(settingsFile))//if the safe file exists, load it
             {
                 var savedSettings = LsonVars.Parse(File.ReadAllText(settingsFile));//put the contents of the settings file into a lua read
@@ -162,7 +141,7 @@ namespace JF17StandaloneDTC
                 Button_import_Clicked();
             }
 
-
+            //code to code the code so the code cand be coded without having to code
             ////https://stackoverflow.com/questions/54941568/programaticly-add-multiple-labels-to-wpf-grid
             //for (int i = 0; i < 200; i++)
             //{
