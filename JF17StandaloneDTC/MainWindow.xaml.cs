@@ -35,11 +35,18 @@ Lessons Learned:
 
 /******************************************
 Improvements:
+-Clean up Assets and References folder
 -properly format the code to standards so that it looks nice
 -prevent the yellow box on the help page from moving with the text
 -Create a custom Windows border
 -Integrate woth other aircraft DTC (kiowa?)
 -implement a check to make sure the jf 17 is in the options lua. (code has been started)
+*******************************************/
+
+/******************************************
+Version Tracker:
+v1.0
+-Initial Release
 *******************************************/
 
 /******************************************
@@ -114,7 +121,7 @@ namespace JF17StandaloneDTC
                 "\n" +
                 "Thank you for using this utility and thank you to Deka for an amazing DCS module. If you have any comments, concerns, suggestions, or just wanna say 'Hi', feel free to contact me on Discord: Bailey#6230.\n" +
                 "Enjoy!\n" +
-                "~Bailey AUG2021\n";
+                "~Bailey SEP2021\n";
 
             label_status.Text = System.DateTime.Now + " : " + "Welcome!!!";
             label_status.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0da04c"));
